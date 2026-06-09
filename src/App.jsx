@@ -19,11 +19,11 @@ export default function App() {
 
 const customStyles = `
   :root {
-    --bg-base: #121212;
+    --bg-base: #352c49;
     --bg-surface: #1e1e1e;
     --text-primary: #ffffff;
     --text-secondary: #b3b3b3;
-    --accent: #bb86fc;
+    --accent: #8434b9;
     --error: #cf6679;
     --card-shadow: rgba(0, 0, 0, 0.4);
     --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
