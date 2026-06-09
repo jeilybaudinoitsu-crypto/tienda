@@ -20,9 +20,9 @@ export default function App() {
 const customStyles = `
   :root {
     --bg-base: #352c49;
-    --bg-surface: #1e1e1e;
+    --bg-surface: #000000;
     --text-primary: #ffffff;
-    --text-secondary: #b3b3b3;
+    --text-secondary: #9e89a3;
     --accent: #8434b9;
     --error: #cf6679;
     --card-shadow: rgba(0, 0, 0, 0.4);
@@ -61,9 +61,9 @@ const customStyles = `
 
   .app-header h1 {
     margin: 0;
-    font-size: 1.8rem;
+    font-size: 2.8rem;
     font-weight: 700;
-    letter-spacing: 1px;
+    letter-spacing: 5px;
   }
 
   .app-header span {
@@ -125,20 +125,21 @@ const customStyles = `
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border: 1px solid #2a2a2a;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.23);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;S
+    border: 1px solid #202020;
   }
 
   .product-card:hover {
     transform: translateY(-8px);
     box-shadow: 0 12px 20px var(--card-shadow);
-    border-color: #3a3a3a;
+    border-color: #000000;
   }
 
   .image-container {
     height: 220px;
-    background-color: #ffffff;
+    background-color: #c2c2c2;
+
     padding: 1.5rem;
     display: flex;
     align-items: center;
