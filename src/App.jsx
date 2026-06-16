@@ -1,16 +1,24 @@
 import React from 'react';
 import ProductList from './components/ProductList';
+import { useFavorites } from './hooks/useFavorites';
 
 export default function App() {
+  const { favorites, toggleFavorite, isFavorite } = useFavorites();
+
   return (
     <>
       <style>{customStyles}</style>
       <div className="app-container">
         <header className="app-header">
           <h1>FakeStore <span>API</span></h1>
+          <span className="fav-counter">Favoritos: {favorites.length}</span>
         </header>
         <main className="app-main">
-          <ProductList />
+          <ProductList
+            favorites={favorites}
+            onToggleFavorite={toggleFavorite}
+            isFavorite={isFavorite}
+          />
         </main>
       </div>
     </>
@@ -60,7 +68,7 @@ const customStyles = `
   }
 
   .app-header h1 {
-    margin: 0;
+    margin: 0 0 0.5rem 0;
     font-size: 2.8rem;
     font-weight: 700;
     letter-spacing: 5px;
@@ -68,6 +76,12 @@ const customStyles = `
 
   .app-header span {
     color: var(--accent);
+  }
+
+  .fav-counter {
+    font-size: 1rem;
+    color: var(--text-secondary);
+    letter-spacing: 1px;
   }
 
   .app-main {
@@ -126,7 +140,7 @@ const customStyles = `
     display: flex;
     flex-direction: column;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.23);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;S
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     border: 1px solid #202020;
   }
 
@@ -183,7 +197,29 @@ const customStyles = `
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--accent);
-    margin: 0;
+    margin: 0 0 1rem 0;
+  }
+
+  .favorite-btn {
+    background: none;
+    border: 2px solid #333;
+    border-radius: 8px;
+    color: var(--text-secondary);
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0.4rem 0.8rem;
+    transition: all 0.2s ease;
+    align-self: flex-start;
+  }
+
+  .favorite-btn:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .favorite-btn.is-favorite {
+    border-color: var(--accent);
+    color: #ffd700;
   }
 
   @media (max-width: 768px) {

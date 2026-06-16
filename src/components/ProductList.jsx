@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ProductCard from './ProductCard';
 
-const ProductList = () => {
+const ProductList = ({ favorites, onToggleFavorite, isFavorite }) => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -50,6 +50,8 @@ const ProductList = () => {
           title={product.title}
           price={product.price}
           image={product.image}
+          isFavorite={isFavorite(product.id)}
+          onToggleFavorite={() => onToggleFavorite(product.id)}
         />
       ))}
     </div>
